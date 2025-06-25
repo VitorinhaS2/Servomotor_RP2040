@@ -43,10 +43,16 @@ int main() {
 
     sleep_ms(2000);  // Pequena pausa antes de iniciar
 
-    // Laíse Cafe: Movimento do servo e LED para 180°
+    // Láisa Bianca: Movimento do servo e LED para 180°
+    set_pwm_pulse(slice_servo, SERVO_PIN, 2400);  // ~180 graus
+    set_pwm_pulse(slice_led, LED_RED_PIN, 2400);
+    sleep_ms(5000);
 
-    // Laíse Cafe: Movimento do servo e LED para 90°
+    // Láisa Bianca: Movimento do servo e LED para 90°
+    set_pwm_pulse(slice_servo, SERVO_PIN, 1470);  // ~90 graus
+    set_pwm_pulse(slice_led, LED_RED_PIN, 1470);
+    sleep_ms(5000);
 
-    // Láisa Bianca: Movimento do servo e LED para 0°
+    // Laíse Café: Movimento do servo e LED para 0°
     
-    // Láisa Bianca: Movimento contínuo suave do servo e LED
+    // Laíse Café: Movimento contínuo suave do servo e LED
