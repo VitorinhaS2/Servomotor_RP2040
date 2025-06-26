@@ -54,5 +54,24 @@ int main() {
     sleep_ms(5000);
 
     // Laíse Café: Movimento do servo e LED para 0°
-    
+    set_pwm_pulse(slice_servo, SERVO_PIN, 500);   // ~0 graus
+    set_pwm_pulse(slice_led, LED_RED_PIN, 500);
+    sleep_ms(5000);
+
     // Laíse Café: Movimento contínuo suave do servo e LED
+    while (true) {
+        for (float pulse = 500; pulse <= 2400; pulse += 5) {
+            set_pwm_pulse(slice_servo, SERVO_PIN, pulse);
+            set_pwm_pulse(slice_led, LED_RED_PIN, pulse);
+            sleep_ms(10);
+        }
+
+        for (float pulse = 2400; pulse >= 500; pulse -= 5) {
+            set_pwm_pulse(slice_servo, SERVO_PIN, pulse);
+            set_pwm_pulse(slice_led, LED_RED_PIN, pulse);
+            sleep_ms(10);
+        }
+    }
+
+    return 0;
+}
